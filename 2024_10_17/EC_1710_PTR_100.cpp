@@ -1,25 +1,13 @@
 #include <iostream>
+#include <ctime>
 
-/**
- * Este conjunto de código mostras definições e utilização do conceito de ponteiros em C/C++.
- * 
- * Todas as variáveis em C/C++ têm associado um endereço de memória.
- * Um ponteiro não é mais do que uma variável que armazena o 'endereço' de memória de outra variável,
- * ou seja, a localização em memõria onde essa variável foi guardada.
- * Após atribuição de endereços de memória a variáveis, não é possível alterar os valores desses endereços.
- * Podemos alterar o valor das variáveis, claro, mas não o endereço onde foram armazenadas.
- * Por exemplo, o endereço de memória '0x5f299ffaf0' corresponde à 'morada' da variável 'codPostal'.
- * Se imprimirmos (cout) a variável 'codPostal' teremos o seu valor atual (que poderia ser 5130-021).
- * 
- * Mesmo sem a capacidade de alterar endereços de memória, podemos ter necessidade de utilizá-los o que,
- * efetivamente, certas linguagens como o C++ permitem manipular de forma bastante simples. 
- * Ou seja, conseguimos assim uma flexibilidade na representação de tipo de dados 'abstratos' [ADT - Abstract Data Type],
- * impossível de se obter por outros meios. 
- * Tipos de dados abstratos são, por exemplo, as listas, as filas, as pilhas e as árvores.
- * Na verdade, o conceito de ponteiro surgiu na linguagem Pascal para a implementação de 'listas'.
- * As variáveis do tipo ponteiro 'apontam' para o próximo elemento de uma lista. 
- */
+// Declaração das funções
+void meuCarimbo(void);
+void mudaLinha(void);
+
 int main() {
+    
+    meuCarimbo();
     
     /** 
     * O operador '&' é unário e significa 'endereço de...'. Por exemplo, &codPostal quer dizer 'endereço da variável codPostal'.
@@ -31,6 +19,8 @@ int main() {
         int numero = 10;
         std::cout << numero  << std::endl;
         std::cout << &numero << std::endl;
+        
+        mudaLinha();
 
 /**
  * Vamos considerar que dispomos de um tipo de dados para representar endereços.
@@ -54,6 +44,8 @@ int main() {
         std::cout << "Mostra o endereço de memória onde se encontra a variável 'var_ex02': " << ptr_ex02 << std::endl;
         std::cout << "Mostra o valor da variável 'var_ex02', apontada pelo ponteiro 'ptr_ex02': " << *ptr_ex02 << std::endl;
 
+    mudaLinha();
+
     /** 
     * [Exemplo 03]
     */ 
@@ -69,6 +61,8 @@ int main() {
         *ptr_ex03 = '+'; 
         std::cout << "Resultado do acesso ao endereço de memória da variável 'letra_ex03': " << letra_ex03 << std::endl;
         
+    mudaLinha();
+    
 /**
  * Existem alguns erros muito comuns quando se usam ponteiros:
  * 1) não devemos (não podemos!) atribuir um endereço a uma variável que não seja do tipo ponteiro:
@@ -81,9 +75,11 @@ int main() {
     * [Exemplo 04]
     */ 
         std::cout << "--- Exemplo 04 --->" << std::endl;
-        int k, *p;
-		*p = 10;
-        std::cout << *p  << std::endl; // Atenção ao erro de 'execução' (runtime).
+        //int k, *p;
+		//*p = 10;
+        //std::cout << *p  << std::endl; // Atenção ao erro de 'execução' (runtime).
+
+    mudaLinha();
 
     /** 
     * [Exemplo 05]
@@ -100,11 +96,13 @@ int main() {
         std::cout << "Valor do primeiro elemento do 'array', usando o endereço (pointer): " << *ptr << std::endl;
         // Nota: se executarmos o código várias vezes verificamos que os endereços de memória são diferentes em cada execução.
       
+    mudaLinha();
+    
     /**
      * Aritmética com ponteiros.
      * O valor de um ponteiro pode ser incrementado (prefix) ou decrementado (postfix).
      * Incrementar um ponteiro significa avançar, para a direita, uma posição de memória (neste caso, dentro do 'array').
-     * Decrementar um ponteiro significa retroceder, para a esquerda, uma posição de memória (nesta caso, dentro do 'array').
+     * Decrementar um ponteiro significa retroceder, para a esquerda, uma posição de memória (neste caso, dentro do 'array').
      * A aritmética de ponteiros não é permitida se o tipo de dados para o qual o ponteiro aponta não estiver completo. 
      * De notar que o operador 'void' é sempre um tipo incompleto.  
      */        
@@ -135,25 +133,24 @@ int main() {
      *  Um uso incorreto dos valores dos ponteiros podem remeter-nos para comportamentos inesperados dos nossos programas (no que respeita ao endreçamento de memória).
      */ 
 
-/**
-Segundo a IA Claude, temos várias vantagens e desvantagens em usar ponteiros em C/C++. Ora vejam:
+    mudaLinha();
 
-Vantagens dos ponteiros:
+    return 0;
+}
 
-    1. Gestão eficiente de memória: os ponteiros permitem reservar e libertar memória dinamicamente, o que é útil para estruturas de dados complexas e de tamanho variável;
-    2. Melhoria de desempenho: passar ponteiros como argumentos de funções é mais rápido e eficiente do que passar grandes estruturas de dados por valor;
-    3. Manipulação de arrays: os ponteiros facilitam a manipulação de arrays, especialmente em operações como ordenação e pesquisa;
-    4. Implementação de estruturas de dados: são essenciais para implementar estruturas de dados complexas como listas ligadas, árvores e grafos.
-    5. Acesso a hardware: permitem acesso direto a endereços de memória específicos, o que é útil em programação de sistemas e drivers.
+// Definição das funções
+void meuCarimbo(void)
+{
+    time_t tempo_atual = time(NULL);
+    struct tm *tempo_local = localtime(&tempo_atual);
+    char data_hora[64];
+   
+    strftime(data_hora, sizeof(data_hora), "%d-%m-%Y %H:%M:%S", tempo_local);
+    std::cout << "\n[UFCD_U15] - [Ponteiros] - [Elisa Coutinho] - [ " << data_hora << " ]" << std::endl;
+    mudaLinha();
+}
 
-Desvantagens dos ponteiros:
-
-    1. Complexidade: a utilização de ponteiros pode tornar o código mais difícil de ler e compreender, especialmente para programadores inexperientes;
-    2. Erros de programação: é fácil cometer erros ao manipular ponteiros, como aceder a memória não atribuída ou esquecer de libertar memória, levando a fugas de memória;
-    3. Problemas de segurança: o uso incorreto de ponteiros pode levar a vulnerabilidades de segurança, como 'buffer overflow';
-    4. Dificuldade na depuração: os erros relacionados com ponteiros podem ser difíceis de detetar e corrigir;
-    5. Incompatibilidade entre plataformas: o tamanho dos ponteiros pode variar entre diferentes arquiteturas, o que pode causar problemas de portabilidade;
-    6. Overhead de gestão: a gestão manual da memória com ponteiros requer mais atenção e cuidado por parte do programador.
-*/
-
-return 0; } // Bug free
+void mudaLinha(void)
+{
+    std::cout << std::endl;
+}
