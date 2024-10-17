@@ -81,9 +81,9 @@ int main() {
     * [Exemplo 04]
     */ 
         std::cout << "--- Exemplo 04 --->" << std::endl;
-        //int k, *p;
-		//*p = 10;
-        // std::cout << *p  << std::endl; // Atenção ao erro de 'execução' (runtime).
+        int k, *p;
+		*p = 10;
+        std::cout << *p  << std::endl; // Atenção ao erro de 'execução' (runtime).
 
     /** 
     * [Exemplo 05]
