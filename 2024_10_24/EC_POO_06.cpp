@@ -25,11 +25,6 @@ class Pessoa {
             this-> classificacao = classificacao;
         }
 
-        // Método para obter os valores de nome, idade e classificação
-        void get() {
-            cout << "Nome: " << nome << ", idade: " << idade << ", classsificação: " << classificacao << endl;
-        }
-
         // Método para obter condição de acesso
         void podeFrequentar(){
             if (classificacao >12 && idade >=20){
@@ -51,7 +46,7 @@ int main() {
     int idade;
     float classificacao;
 
-    // Intereação com utilizador
+    // Interação com utilizador
     cout << "Digite o seu nome: ";
     cin >> nome;
 
