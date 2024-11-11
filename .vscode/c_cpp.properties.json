@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "macOS",
+            "includePath": [
+                "/opt/homebrew/opt/raylib/include",  // Caminho para os cabeçalhos da Raylib
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-gcc-x64",
+            "browse": {
+                "path": [
+                    "/opt/homebrew/opt/raylib/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
