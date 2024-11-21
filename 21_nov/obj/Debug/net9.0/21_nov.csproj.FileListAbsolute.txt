@@ -1,0 +1,14 @@
+/Users/elisadrummond/RiderProjects/21_nov/bin/Debug/net9.0/21_nov
+/Users/elisadrummond/RiderProjects/21_nov/bin/Debug/net9.0/21_nov.deps.json
+/Users/elisadrummond/RiderProjects/21_nov/bin/Debug/net9.0/21_nov.runtimeconfig.json
+/Users/elisadrummond/RiderProjects/21_nov/bin/Debug/net9.0/21_nov.dll
+/Users/elisadrummond/RiderProjects/21_nov/bin/Debug/net9.0/21_nov.pdb
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/21_nov.GeneratedMSBuildEditorConfig.editorconfig
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/21_nov.AssemblyInfoInputs.cache
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/21_nov.AssemblyInfo.cs
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/21_nov.csproj.CoreCompileInputs.cache
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/21_nov.dll
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/refint/21_nov.dll
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/21_nov.pdb
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/21_nov.genruntimeconfig.cache
+/Users/elisadrummond/RiderProjects/21_nov/obj/Debug/net9.0/ref/21_nov.dll
